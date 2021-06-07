@@ -21,8 +21,8 @@ Item {
         anchors.fill: parent
         height: 45
         radius: 5
-        opacity: parent.hovered? .4 : !parent.selected? 0 : .9
-        color: theme.hightlightColor
+        opacity: area.containsPress? .4 : !parent.selected? 0 : .9
+        color: area.containsMouse? theme.buttonColorHovered : theme.buttonColorEnabled
     }
     DexLabel {
         id: _label
@@ -33,6 +33,7 @@ Item {
     }
     MouseArea {
         id: area
+        hoverEnabled: true
         cursorShape: "PointingHandCursor"
         onClicked: parent.clicked()
         anchors.fill: parent

@@ -453,6 +453,8 @@ run_app(int argc, char** argv)
 
     engine.addImportPath("qrc:/atomic_defi_design/imports");
     engine.addImportPath("qrc:/atomic_defi_design/Constants");
+    qmlRegisterSingletonType(QUrl("qrc:/atomic_defi_design/qml/Constants/Tutorials.qml"), "Tutorials", 1, 0, "Tutorials");
+    qmlRegisterSingletonType(QUrl("qrc:/atomic_defi_design/qml/Constants/Images.qml"), "App", 1, 0, "Images");
     qmlRegisterSingletonType(QUrl("qrc:/atomic_defi_design/qml/Constants/General.qml"), "App", 1, 0, "General");
     qmlRegisterSingletonType(QUrl("qrc:/atomic_defi_design/qml/Constants/Style.qml"), "App", 1, 0, "Style");
     qmlRegisterSingletonType(QUrl("qrc:/atomic_defi_design/qml/Constants/API.qml"), "App", 1, 0, "API");

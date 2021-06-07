@@ -23,7 +23,7 @@ DexWindow {
     Universal.accent: Style.colorQtThemeAccent
     Universal.foreground: Style.colorQtThemeForeground
     Universal.background: Style.colorQtThemeBackground
-
+    signal showTutorial()
     onVisibilityChanged: {
         // 3 is minimized, ignore that
         if(visibility !== 3)

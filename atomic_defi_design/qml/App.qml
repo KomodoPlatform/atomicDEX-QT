@@ -287,6 +287,20 @@ Rectangle {
     	property alias fontDensity: _font.fontDensity
     	property alias fontFamily: _font.fontFamily
     }
+
+    Connections {
+        target: window 
+        function onShowTutorial() {
+            if(current_page===idx_dashboard) {
+                loader.item.showTutorial()
+                console.log("Call dashboard page tuto")
+            }
+            else {
+                console.log("Call other tuto")
+            }
+        }
+    }
+
     function loadTheme() {
         console.log(JSON.stringify(API.qt_utilities.get_themes_list()))
         atomic_settings2.sync()

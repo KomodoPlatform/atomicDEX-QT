@@ -1,3 +1,4 @@
 singleton General General.qml
 singleton Style Style.qml
 singleton API API.qml
+singleton Tutorials Tutorials.qml

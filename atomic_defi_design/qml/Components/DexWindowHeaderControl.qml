@@ -7,12 +7,23 @@ import QtQuick.Layouts 1.12
 import "../Constants"
 
 RowLayout {
-    width: 195
+    width: 264
     anchors.right: parent.right
     height: 40
     spacing: 0
     anchors.top: parent.top
     anchors.topMargin: 0
+    Qaterial.FlatButton {
+        topInset: 0
+        leftInset: 0
+        rightInset: 0
+        bottomInset: 0
+        radius: 0
+        opacity: .7
+        foregroundColor: app.globalTheme.foregroundColor
+        icon.source: Qaterial.Icons.help
+        onClicked: window.showTutorial()
+    }
     Qaterial.FlatButton {
         topInset: 0
         leftInset: 0
