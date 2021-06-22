@@ -3,7 +3,8 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
 
 import QtCharts 2.3
-import QtWebEngine 1.8
+import QtWebView 1.15
+
 
 import "../../Components"
 import "../../Constants"
@@ -128,7 +129,7 @@ DexBox {
     <!-- TradingView Widget END -->`)
         }
 
-        WebEngineView {
+        WebView {
             id: chart
             anchors.fill: parent
             anchors.margins: -1

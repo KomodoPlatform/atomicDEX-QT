@@ -25,13 +25,13 @@ ScrollBar {
     background: Item {
         width: 10
         x: -width/2 + 6/2
-        InnerBackground {
+        /*InnerBackground {
             visible: control.visibleBackground
             width: parent.width
             height: parent.height - 7
             anchors.verticalCenter: parent.verticalCenter
 
             color: Style.colorScrollbarBackground
-        }
+        }*/
     }
 }

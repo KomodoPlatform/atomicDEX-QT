@@ -70,7 +70,7 @@ DefaultModal
                     property color color: root.currentIndex >= (root.count-1 - index) ? Style.colorGreen : Style.colorTheme5
                     width: (index === root.count-1 ? 0 : circle.width*2) + circle.width*0.5
                     height: circle.height * 1.5
-                    InnerBackground {
+                    /*InnerBackground {
                         id: rectangle
                         height: circle.height/4
                         anchors.left: parent.left
@@ -78,7 +78,7 @@ DefaultModal
                         anchors.leftMargin: -circle.width*0.5
                         anchors.right: circle.horizontalCenter
                         color: bundle.color
-                    }
+                    }*/
 
                     FloatingBackground {
                         id: circle

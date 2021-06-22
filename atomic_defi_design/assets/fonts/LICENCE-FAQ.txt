@@ -24,7 +24,7 @@
 
    The licence chosen by any free software project is one of the
    foundational decisions that sets out how derivatives and contributions
-   can occur, and in turn what kind of community will form around the
+   can occur, and in turn what kind of community will forms around the
    project.
 
    Using a licence that is compatible with other popular licences is a

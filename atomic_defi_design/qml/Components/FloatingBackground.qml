@@ -1,5 +1,5 @@
 import QtQuick 2.15
-import QtGraphicalEffects 1.0
+import Qt5Compat.GraphicalEffects
 import "../Constants"
 
 Item {
@@ -78,7 +78,7 @@ Item {
         horizontalOffset: verticalShadow ? 0 : -6
         verticalOffset: verticalShadow ? -10 : -6
         radius: verticalShadow ? 25 : 15
-        samples: 32
+        layer.samples: 32
         spread: 0
         color: verticalShadow ? theme.floatShadow2 : theme.floatShadow1
         smooth: true
@@ -94,7 +94,7 @@ Item {
         horizontalOffset: verticalShadow ? 0 : 6
         verticalOffset: verticalShadow ? 10 : 6
         radius: verticalShadow ? 25 : 20
-        samples: 32
+        layer.samples: 32
         spread: 0
         color: theme.floatBoxShadowDark
         smooth: true

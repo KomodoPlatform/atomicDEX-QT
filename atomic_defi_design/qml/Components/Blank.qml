@@ -2,9 +2,9 @@ import QtQuick 2.15
 import Qaterial 1.0 as Qaterial
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.12
-import QtWebEngine 1.8
+import QtWebView 1.15
 
-import QtGraphicalEffects 1.0
+import Qt5Compat.GraphicalEffects
 
 import "../Exchange/Trade/"
 import "../Constants/" as Constants
@@ -46,7 +46,7 @@ Item {
                     defaultHeight: 200
                     expandedVert: true
                     contentItem: Component {
-                        WebEngineView {
+                        WebView {
                             url: "https://fr.tradingview.com/chart/?symbol=KMD/BTC&theme=dark"
                         }
                     }

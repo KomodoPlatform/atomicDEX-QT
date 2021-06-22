@@ -19,7 +19,7 @@ BasicModal {
     ModalContent {
         title: qsTr("Disclaimer & Terms of Service")
 
-        InnerBackground {
+        /*InnerBackground {
             id: eula_rect
 
             height: 400
@@ -39,7 +39,7 @@ BasicModal {
                     width: eula_rect.width - 40
                 }
             }
-        }
+        }*/
 
         // Checkboxes
         DefaultCheckBox {

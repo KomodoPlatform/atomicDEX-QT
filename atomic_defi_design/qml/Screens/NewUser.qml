@@ -283,7 +283,7 @@ SetupPage {
                 id: input_seed_word
                 title: qsTr("What's the %n. word in your seed phrase?", "", current_word_idx + 1)
                 field.placeholderText: qsTr("Enter the %n. word", "", current_word_idx + 1)
-                field.validator: RegExpValidator { regExp: /[a-z]+/ }
+                field.validator: RegularExpressionValidator { regularExpression: /[a-z]+/ }
                 field.onAccepted: tryGuess()
             }
 

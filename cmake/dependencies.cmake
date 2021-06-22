@@ -75,7 +75,8 @@ else ()
 endif ()
 add_library(komodo-date::date ALIAS komodo-date)
 
-find_package(Qt5 5.15 COMPONENTS Core Quick LinguistTools Svg Charts WebEngine WebEngineCore WebEngineWidgets Widgets REQUIRED)
+set(CMAKE_PREFIX_PATH "/Users/milerius/QtOnlineInstaller/6.2.0/macos/lib/cmake")
+find_package(Qt6 COMPONENTS Core Quick LinguistTools Svg Charts WebView Widgets Core5Compat REQUIRED) #WebEngine WebEngineCore WebEngineWidgets
 
 #find_package(Qt5)
 

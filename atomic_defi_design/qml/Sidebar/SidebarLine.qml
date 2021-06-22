@@ -2,7 +2,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
 
-import QtGraphicalEffects 1.0
+import Qt5Compat.GraphicalEffects
 import "../Components"
 import "../Constants"
 
@@ -57,7 +57,7 @@ Item {
         verticalOffset: 3
         radius: 3
         //scale: 
-        samples: 6
+        layer.samples: 6
         antialiasing: true
         spread: 0
         color: "#40000000"
@@ -96,7 +96,7 @@ Item {
         horizontalOffset: 0
         verticalOffset: 3
         radius: 3
-        samples: 4
+        layer.samples: 4
         spread: 0
         scale: Qt.platform.os==="windows"? 1.2 : API.app.settings_pg.lang=="fr"? 0.85 : 1
         color: "#40000000"

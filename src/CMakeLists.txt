@@ -3,7 +3,7 @@ include(DEX_NEW_LIB)
 # Core target
 DEX_NEW_LIB(core INTERFACE
         INTERFACE_DEPS
-            cpprestsdk::cpprest Qt::Core Qt::Quick Qt::Svg Qt::Charts Qt::WebEngine Qt::WebEngineCore Qt::WebEngineWidgets
+            cpprestsdk::cpprest Qt::Core Qt::Quick Qt::Svg Qt::Charts Qt::Core5Compat Qt::WebView #Qt::WebEngineCore Qt::WebEngineWidgets Qt::WebEngine
             Qt::Widgets nlohmann_json::nlohmann_json antara_qrcode spdlog::spdlog antara::world
             unofficial-btc::bitcoin komodo-date::date komodo-taskflow::taskflow
             Boost::random Boost::filesystem komodo-sodium::sodium antara::app::net
@@ -42,7 +42,7 @@ if (DISABLE_GEOBLOCKING)
     message(STATUS "Disabling Geoblocking for dev purpose")
     target_compile_definitions(${PROJECT_NAME}_core INTERFACE -DDISABLE_GEOBLOCKING)
 endif ()
-target_link_libraries(${PROJECT_NAME}_core INTERFACE SortFilterProxyModel)
+#target_link_libraries(${PROJECT_NAME}_core INTERFACE SortFilterProxyModel)
 
 
 # Translation files
@@ -53,7 +53,7 @@ set(TS_FILES
         ${CMAKE_SOURCE_DIR}/atomic_defi_design/assets/languages/atomic_defi_tr.ts
         ${CMAKE_SOURCE_DIR}/atomic_defi_design/assets/languages/atomic_defi_ru.ts)
 set_source_files_properties(${TS_FILES} PROPERTIES OUTPUT_LOCATION ${CMAKE_SOURCE_DIR}/atomic_defi_design/assets/languages)
-qt5_create_translation(QM_FILES
+qt6_create_translation(QM_FILES
         ${PROJECT_SOURCE_DIR}/atomic_defi_design/qml
         ${PROJECT_SOURCE_DIR}/src
         ${TS_FILES}

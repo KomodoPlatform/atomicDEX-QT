@@ -1,7 +1,8 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
-import Qt.labs.platform 1.0
+import Qt.labs.platform 1.1
+
 import Qaterial 1.0 as Qaterial
 
 import "../Constants"
@@ -219,7 +220,7 @@ DexPopup {
     SystemTrayIcon {
         id: tray
         visible: true
-        iconSource: General.image_path + "dex-tray-icon.png"
+        icon.source: General.image_path + "dex-tray-icon.png"
 
         tooltip: API.app_name
         onMessageClicked: {

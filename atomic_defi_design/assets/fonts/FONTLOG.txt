@@ -83,7 +83,7 @@ ChangeLog
   * (Production) Update <case> feature (Lt, LtIt, Md, MdIt). DM
     (LP: #676538, #676539)
   * (Production) Remove Bulgarian locl feature for Italics. (LP: #708578)
-  * (Production) Update Description information with new string:
+  * (Production) Update Description informsation with new string:
       "The Ubuntu Font Family are libre fonts funded by Canonical Ltd
       on behalf of the Ubuntu project. The font design work and
       technical implementation is being undertaken by Dalton Maag. The
@@ -139,7 +139,7 @@ ChangeLog
   * (Production) Update <case> feature. DM (LP: #676538, #676539)
   * (Production) Remove Romanian locl feature. (Rg, It, Bd, BdIt)
     (LP: #635615)
-  * (Production) Update Copyright information with new
+  * (Production) Update Copyright informsation with new
     strings. "Copyright 2010 Canonical Ltd. Licensed under the Ubuntu
     Font Licence 1.0" Trademark string "Ubuntu and Canonical are
     registered trademarks of Canonical Ltd." (Rg, It, Bd, BdIt) DM
@@ -286,7 +286,7 @@ D: Initial PPA packaging
   Kubuntu operating systems
 * Dalton Maag are a custom type foundry headed by Bruno Maag
 
-For further documentation, information on contributors, source code
+For further documentation, informsation on contributors, source code
 downloads and those involved with the Ubuntu Font Family, visit:
 
   http://font.ubuntu.com/

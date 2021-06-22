@@ -23,7 +23,7 @@ as received under this licence.
 
 "Modified Version" refers to any derivative made by adding to, deleting,
 or substituting -- in part or in whole -- any of the components of the
-Original Version, by changing formats or by porting the Font Software to
+Original Version, by changing formsats or by porting the Font Software to
 a new environment.
 
 "Copyright Holder(s)" refers to all individuals and companies who have a

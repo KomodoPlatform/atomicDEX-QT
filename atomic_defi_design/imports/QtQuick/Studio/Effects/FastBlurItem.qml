@@ -28,7 +28,7 @@
 ****************************************************************************/
 
 import QtQuick 2.8
-import QtGraphicalEffects 1.0
+import Qt5Compat.GraphicalEffects
 
 Item {
     id: root

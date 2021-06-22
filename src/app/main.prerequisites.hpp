@@ -23,15 +23,16 @@
 //! Qt
 #include <QApplication>
 #include <QDebug>
-#include <QDesktopWidget>
 #include <QQmlApplicationEngine>
+#include <QQuickWindow>
 #include <QScreen>
 #include <QSettings>
 #include <QWindow>
 #include <QtGlobal>
 #include <QtQml>
 #include <QFontDatabase>
-#include <QtWebEngine>
+#include <QtWebView>
+//#include <QtWebEngine>
 
 //! Qaterial
 #include <Qaterial/Qaterial.hpp>
@@ -236,9 +237,9 @@ init_dpi()
         }
     }
 #endif
-    QGuiApplication::setHighDpiScaleFactorRoundingPolicy(
-        should_floor ? Qt::HighDpiScaleFactorRoundingPolicy::Floor : Qt::HighDpiScaleFactorRoundingPolicy::PassThrough);
-    QGuiApplication::setAttribute(should_floor ? Qt::AA_DisableHighDpiScaling : Qt::AA_EnableHighDpiScaling);
+    //QGuiApplication::setHighDpiScaleFactorRoundingPolicy(
+    //    should_floor ? Qt::HighDpiScaleFactorRoundingPolicy::Floor : Qt::HighDpiScaleFactorRoundingPolicy::PassThrough);
+    //QGuiApplication::setAttribute(should_floor ? Qt::AA_DisableHighDpiScaling : Qt::AA_EnableHighDpiScaling);
     SPDLOG_INFO("dpi settings finished");
 }
 
@@ -410,7 +411,7 @@ run_app(int argc, char** argv)
     setup_default_themes();
     fs::path settings_path = (atomic_dex::utils::get_current_configs_path() / "cfg.ini");
     check_settings_reconfiguration(settings_path);
-    init_dpi();
+    //init_dpi();
 
     //! App declaration
     atomic_dex::application atomic_app;
@@ -425,7 +426,8 @@ run_app(int argc, char** argv)
 
     //! QT
     QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
-    QtWebEngine::initialize();
+    //QtWebEngine::initialize();
+    QtWebView::initialize();
     std::shared_ptr<QApplication> app = std::make_shared<QApplication>(argc, argv);
 
     app->setOrganizationName("KomodoPlatform");

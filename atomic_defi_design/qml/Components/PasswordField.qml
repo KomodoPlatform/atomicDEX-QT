@@ -55,7 +55,7 @@ ColumnLayout {
         hidable: true
         title: qsTr("Password")
         field.placeholderText: qsTr("Enter your wallet password")
-        field.validator: RegExpValidator { regExp: General.reg_pass_input }
+        field.validator: RegularExpressionValidator { regularExpression : General.reg_pass_input }
     }
 
     ColumnLayout {

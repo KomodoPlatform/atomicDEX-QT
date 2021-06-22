@@ -1,10 +1,12 @@
 // Qt Imports
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15
-import QtQuick.Controls.Universal 2.15
-import QtQuick.Controls 1.4
-import QtQuick.Controls.Styles 1.4
+import QtQuick.Controls
+//import QtQuick.Controls.Styles
+import QtQuick.Controls.Universal
+//import QtQuick.Controls.Universal 2.15
+//import QtQuick.Controls 1.4
+//import QtQuick.Controls.Styles 1.4
 
 // Deps Imports
 import Qaterial 1.0 as Qaterial
@@ -92,7 +94,7 @@ BasicModal {
             }
 
             // Addresses Table
-            TableView {
+            /*TableView {
                 id: wallet_info_table
 
                 model: contactModel.proxy_filter
@@ -281,7 +283,7 @@ BasicModal {
                         }
                     }
                 }
-            }
+            }*/
 
             RowLayout {
                 PrimaryButton { // New Address Button

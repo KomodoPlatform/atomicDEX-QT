@@ -2,9 +2,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
 
-import QtWebEngine 1.8
-
-import QtGraphicalEffects 1.0
+import Qt5Compat.GraphicalEffects
 import QtCharts 2.3
 import Qaterial 1.0 as Qaterial
 import ModelHelper 0.1
@@ -133,11 +131,11 @@ Item {
                     anchors.rightMargin: 40
                     anchors.leftMargin: 40
                     spacing: 35
-                    AmountChart {
+                    /*AmountChart {
                         id: willyBG
                         Layout.fillHeight: true
                         Layout.fillWidth: true
-                    }
+                    }*/
 
                     AssetPieChart {
                         id: pie

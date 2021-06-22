@@ -2,7 +2,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
 
-import QtGraphicalEffects 1.0
+import Qt5Compat.GraphicalEffects
 import "../Components"
 import "../Constants"
 
@@ -214,7 +214,7 @@ Item {
         horizontalOffset: 0
         verticalOffset: 0
         radius: 32
-        samples: 32
+        layer.samples: 32
         spread: 0
         color: Style.colorWalletsSidebarDropShadow
         smooth: true

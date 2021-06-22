@@ -25,18 +25,18 @@ if (NOT WITH_HOTRELOAD)
     message(STATUS "Hot Reload is not active download SortFilterProxyModel")
     include(FetchContent)
 
-    set(SFPM_REPOSITORY "https://github.com/OlivierLDff/SortFilterProxyModel.git" CACHE STRING "SortFilterProxyModel repository url")
-    set(SFPM_TAG master CACHE STRING "SortFilterProxyModel git tag")
+    #set(SFPM_REPOSITORY "https://github.com/OlivierLDff/SortFilterProxyModel.git" CACHE STRING "SortFilterProxyModel repository url")
+    #set(SFPM_TAG master CACHE STRING "SortFilterProxyModel git tag")
 
-    FetchContent_Declare(
-            SortFilterProxyModel
-            GIT_REPOSITORY ${SFPM_REPOSITORY}
-            GIT_TAG        ${SFPM_TAG}
-            GIT_SHALLOW    1
-    )
+    #FetchContent_Declare(
+    #        SortFilterProxyModel
+    #        GIT_REPOSITORY ${SFPM_REPOSITORY}
+    #        GIT_TAG        ${SFPM_TAG}
+   #         GIT_SHALLOW    1
+   # )
 
-    set(SFPM_FOLDER_PREFIX "Dependencies" CACHE STRING "Prefix folder for all SortFilterProxyModel generated targets in generated project (only decorative)")
-    FetchContent_MakeAvailable(SortFilterProxyModel)
+    #set(SFPM_FOLDER_PREFIX "Dependencies" CACHE STRING "Prefix folder for all SortFilterProxyModel generated targets in generated project (only decorative)")
+    #FetchContent_MakeAvailable(SortFilterProxyModel)
 endif()
 
 ##! Antara
@@ -74,8 +74,8 @@ endif ()
 
 FetchContent_Declare(
         qmaterial
-        GIT_REPOSITORY https://github.com/KomodoPlatform/Qaterial.git
-        GIT_TAG a5ae919a1e33e4a3c63dab4650c825586b7041c9
+        GIT_REPOSITORY https://github.com/moodyhunter/Qaterial
+        GIT_TAG eb4ddf17a34722cd8fb8b5bdf79f6b993ffcfbb8
 )
 
 FetchContent_Declare(jl777-coins

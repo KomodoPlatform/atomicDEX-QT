@@ -2,7 +2,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
-import QtGraphicalEffects 1.0
+import Qt5Compat.GraphicalEffects
 import Qt.labs.settings 1.0
 import QtQml 2.12
 import QtQuick.Window 2.12

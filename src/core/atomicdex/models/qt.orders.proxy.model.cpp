@@ -162,7 +162,7 @@ namespace atomic_dex
 
         if (not this->m_is_history && this->filterRole() == orders_model::OrdersRoles::TickerPairRole)
         {
-            const auto pattern = this->filterRegExp().pattern().toStdString();
+            const auto pattern = this->filterRegularExpression().pattern().toStdString();
             if (pattern.find("/") != std::string::npos)
             {
                 std::vector<std::string> out;
@@ -322,7 +322,7 @@ namespace atomic_dex
             filter_infos.to_timestamp = to_timestamp;
         }
 
-        const auto pattern = this->filterRegExp().pattern().toStdString();
+        const auto pattern = this->filterRegularExpression().pattern().toStdString();
         if (pattern.find("/") != std::string::npos)
         {
             std::vector<std::string> out;

@@ -1,7 +1,9 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
-import QtQuick.Dialogs 1.3
+import Qt.labs.platform 1.1
+
+//import QtQuick.Dialogs 1.3
 
 import AtomicDEX.CoinType 1.0
 
@@ -215,13 +217,14 @@ BasicModal {
             id: input_logo
 
             property string path
-            onFileUrlChanged: path = input_logo.fileUrl.toString()
+            onFileChanged: path = input_logo.fileUrl.toString()
 
             readonly property bool enabled: true // Config preparation function searches for this
 
             title: qsTr("Please choose the asset logo")
             folder: shortcuts.pictures
-            selectMultiple: false
+            fileMode: FileDialog.OpenFile
+        //selectMultiple: false
             onAccepted: {
                 console.log("Image chosen: " + input_logo.path)
             }
