@@ -70,6 +70,7 @@ DexWindow
 		anchors.topMargin: 30
 		anchors.margins: 2
 	}
+	
 	DexPopup
 	{
 		id: userMenu
