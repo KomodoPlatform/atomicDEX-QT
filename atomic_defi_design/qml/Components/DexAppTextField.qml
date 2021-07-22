@@ -9,13 +9,18 @@ Item {
 	id: control
 	width:  200
     height: 35
+
+	property int leftWidth: -1
+	readonly property int max_length: 40
+
     property alias value: input_field.text
 	property alias field: input_field
 	property alias background: _background
+
 	property string leftText: ""
 	property string rightText: ""
-	property int leftWidth: -1
-	readonly property int max_length: 40 
+	property string placeholderText: ""
+
 	property bool error: false
 	onErrorChanged: {
 		if(error) {
@@ -51,8 +56,8 @@ Item {
 	    width: parent.width
 	    height: parent.height
 	    radius: 4
-	    color: theme.surfaceColor
-	    border.color: control.error ? theme.redColor :  input_field.focus ? theme.accentColor : theme.rectangleBorderColor
+	    color: DexTheme.surfaceColor
+	    border.color: control.error ? DexTheme.redColor :  input_field.focus ? DexTheme.accentColor : DexTheme.rectangleBorderColor
 	    border.width: input_field.focus ? 1 : 0
 	    Behavior on x {
 	    	NumberAnimation {
@@ -76,7 +81,7 @@ Item {
 				leftPadding: 5
 				horizontalAlignment: DexLabel.AlignHCenter
 				text: leftText
-				color: theme.foregroundColor
+				color: DexTheme.foregroundColor
 				opacity: .4
 				font.pixelSize: 14
 				font.weight: Font.Medium
@@ -90,7 +95,7 @@ Item {
 				anchors.topMargin: 1
 				anchors.bottomMargin: 1
 				radius: _background.radius
-				color: theme.surfaceColor
+				color: DexTheme.surfaceColor
 				DexTextField {
 			        id: input_field
 					onTextChanged: {
@@ -108,6 +113,18 @@ Item {
 			        font.pixelSize: 13
 			        anchors.fill: parent
 			    }
+			    DexLabel {
+			    	text: control.placeholderText
+			    	anchors.verticalCenter: parent.verticalCenter
+			    	leftPadding: input_field.leftPadding
+			    	color: DexTheme.foregroundColor
+			    	font: DexTypo.body1
+			    	elide: DexLabel.ElideRight
+			    	width: parent.width - 10
+			    	wrapMode: DexLabel.NoWrap
+			    	visible: input_field.text === ""
+			    	opacity: .2
+			    }
 			}
 		}
 		Item {
@@ -119,7 +136,7 @@ Item {
 				anchors.centerIn: parent
 				horizontalAlignment: DexLabel.AlignHCenter
 				text: rightText
-				color: theme.foregroundColor
+				color: DexTheme.foregroundColor
 				opacity: .4
 				font.pixelSize: 14
 				font.weight: Font.Medium

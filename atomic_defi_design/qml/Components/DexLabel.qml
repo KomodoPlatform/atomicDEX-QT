@@ -1,5 +1,7 @@
 import QtQuick 2.15
+import App 1.0
 import "../Constants"
+import App 1.0
 
 Text {
     property string text_value
@@ -14,7 +16,7 @@ Text {
               })
 
     color: try {
-            theme.foregroundColor?? "white"
+            DexTheme.foregroundColor?? "white"
         } catch(e) {
             "white"
         }

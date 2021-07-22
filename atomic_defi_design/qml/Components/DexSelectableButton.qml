@@ -4,6 +4,7 @@ import QtQuick.Controls 2.15
 import QtGraphicalEffects 1.0
 import Qt.labs.settings 1.0
 
+import App 1.0
 
 import QtQuick.Window 2.12
 
@@ -22,12 +23,13 @@ Item {
         height: 45
         radius: 5
         opacity: parent.hovered? .4 : !parent.selected? 0 : .9
-        color: theme.hightlightColor
+        color: DexTheme.hightlightColor
     }
     DexLabel {
         id: _label
         anchors.centerIn: parent
-        font: theme.textType.button
+        font: DexTypo.button
+        color: DexTheme.foregroundColor
         text: ""
         opacity: area.containsMouse? 1 : .7
     }

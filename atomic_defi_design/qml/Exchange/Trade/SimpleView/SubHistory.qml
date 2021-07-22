@@ -9,9 +9,11 @@ import Qaterial 1.0 as Qaterial
 
 //! Project Imports
 import "../../../Components"
-import "../../../Constants"   //> Style
+import "../../../Constants" as Constants  //> Style
 import "../Orders" as Orders
 import "Main.js" as Main
+
+import App 1.0 
 
 Item {
     id: _subHistoryRoot
@@ -70,14 +72,14 @@ Item {
             DefaultText // Title
             {
                 text: qsTr("History")
-                font.pixelSize: Style.textSize1
+                font.pixelSize: Constants.Style.textSize1
             }
 
             DexLabel // Description
             {
                 width: _subHistoryRoot.width - 40
                 anchors.topMargin: 12
-                font.pixelSize: Style.textSizeSmall4
+                font.pixelSize: Constants.Style.textSizeSmall4
                 //text: _filterApplied? "" : qsTr("Finished orders")
                 DexLabel {
                     opacity: .4
@@ -127,7 +129,7 @@ Item {
             }
             DexRectangle {
                 anchors.fill: parent 
-                color: theme.dexBoxBackgroundColor
+                color: DexTheme.dexBoxBackgroundColor
                 opacity: .8
                 visible: _subHistoryRoot.displayFilter
                 border.width: 0
@@ -137,7 +139,7 @@ Item {
                 height: _subHistoryRoot.displayFilter? 330 : 60
                 visible: height>100
                 sizeAnimation: true
-                color: theme.dexBoxBackgroundColor
+                color: DexTheme.dexBoxBackgroundColor
                 radius: 0
                 y: -20
                 Column {
@@ -149,7 +151,7 @@ Item {
                         text: qsTr("Filter settings")
                         topPadding: 10
                         leftPadding: 10
-                        font: _font.body1
+                        font: DexTypo.body1
                     }
                     RowLayout {
                         width: main_order.width - 30
@@ -159,7 +161,7 @@ Item {
                         DexLabel {
                             text: qsTr("Base Ticker")
                             leftPadding: 10
-                            font: _font.body2
+                            font: DexTypo.body2
                             Layout.fillWidth: true
                             Layout.alignment: Qt.AlignVCenter
                             opacity: .6
@@ -182,7 +184,7 @@ Item {
                         DexLabel {
                             text: qsTr("Rel Ticker")
                             leftPadding: 10
-                            font: _font.body2
+                            font: DexTypo.body2
                             Layout.fillWidth: true
                             Layout.alignment: Qt.AlignVCenter
                             opacity: .6

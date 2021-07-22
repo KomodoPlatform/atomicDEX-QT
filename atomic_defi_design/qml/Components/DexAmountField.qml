@@ -3,6 +3,8 @@ import QtQuick.Controls 2.15
 import Qaterial 1.0 as Qaterial
 import QtQuick.Layouts  1.5
 
+import App 1.0
+
 Item {
 	id: control
 	width:  200
@@ -20,8 +22,8 @@ Item {
 		id: _background
 	    anchors.fill: parent
 	    radius: 4
-	    color: theme.surfaceColor
-	    border.color: theme.accentColor
+	    color: DexTheme.surfaceColor
+	    border.color: DexTheme.accentColor
 	    border.width: input_field.focus? 1 : 0
 	}
 
@@ -40,7 +42,7 @@ Item {
 				leftPadding: 5
 				horizontalAlignment: DexLabel.AlignHCenter
 				text: leftText
-				color: theme.foregroundColor
+				color: DexTheme.foregroundColor
 				opacity: .4
 				font.pixelSize: 14
 				font.weight: Font.Medium
@@ -54,7 +56,7 @@ Item {
 				anchors.topMargin: 1
 				anchors.bottomMargin: 1
 				radius: 0
-				color: theme.surfaceColor
+				color: DexTheme.surfaceColor
 				DexTextField {
 			        id: input_field
 			        validator: RegExpValidator {
@@ -86,7 +88,7 @@ Item {
 				anchors.centerIn: parent
 				horizontalAlignment: DexLabel.AlignHCenter
 				text: rightText
-				color: theme.foregroundColor
+				color: DexTheme.foregroundColor
 				opacity: .4
 				font.pixelSize: 14
 				font.weight: Font.Medium

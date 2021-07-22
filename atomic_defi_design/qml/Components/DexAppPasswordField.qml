@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Window 2.15
 import Qaterial 1.0 as Qaterial
+import App 1.0
 
 
 DexAppTextField {
@@ -16,9 +17,9 @@ DexAppTextField {
     background.radius: 25
     field.echoMode: TextField.Password
     field.font: Qt.font({
-        pixelSize: (16 * theme.textType.fontDensity) * (Screen.pixelDensity / 160),
+        pixelSize: (16 * DexTypo.fontDensity) * (Screen.pixelDensity / 160),
         letterSpacing: 0.5,
-        family: theme.textType.fontFamily,
+        family: DexTypo.fontFamily,
         weight: Font.Normal
     })
     Component.onCompleted: console.log(Screen.devicePixelRatio)
@@ -31,13 +32,13 @@ DexAppTextField {
         height: 40
         width: 60
         radius: 20
-        color: _inputPassword.field.focus ? _inputPassword.background.border.color : theme.accentColor
+        color: _inputPassword.field.focus ? _inputPassword.background.border.color : DexTheme.accentColor
         anchors.verticalCenter: parent.verticalCenter
         Qaterial.ColorIcon {
             anchors.centerIn: parent
             iconSize: 19
+            color: DexTheme.surfaceColor
             source: _inputPassword.leftIcon
-            color: theme.surfaceColor
         }
 
     }
@@ -45,7 +46,7 @@ DexAppTextField {
         opacity: .8
         icon {
             source: _inputPassword.field.echoMode === TextField.Password ? Qaterial.Icons.eyeOffOutline : Qaterial.Icons.eyeOutline
-            color: _inputPassword.field.focus ? _inputPassword.background.border.color : theme.accentColor
+            color: _inputPassword.field.focus ? _inputPassword.background.border.color : DexTheme.accentColor
         }
         anchors {
             verticalCenter: parent.verticalCenter

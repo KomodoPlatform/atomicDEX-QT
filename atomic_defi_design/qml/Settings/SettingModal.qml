@@ -13,6 +13,7 @@ import Qaterial 1.0 as Qaterial
 // Project Imports
 import "../Components"
 import "../Constants"
+import App 1.0
 
 
 Qaterial.Dialog {
@@ -59,12 +60,12 @@ Qaterial.Dialog {
     Overlay.modal: Item {
         Rectangle {
             anchors.fill: parent
-            color: theme.surfaceColor
+            color: DexTheme.surfaceColor
             opacity: .7
         }
     }
     background: FloatingBackground {
-        color: theme.dexBoxBackgroundColor
+        color: DexTheme.dexBoxBackgroundColor
         radius: 3
     }
     padding: 0
@@ -76,7 +77,7 @@ Qaterial.Dialog {
         Qaterial.AppBarButton {
             anchors.right: parent.right
             anchors.rightMargin: 10
-            foregroundColor: theme.foregroundColor
+            foregroundColor: DexTheme.foregroundColor
             icon.source: Qaterial.Icons.close
             anchors.verticalCenter: parent.verticalCenter
             onClicked: setting_modal.close()
@@ -87,18 +88,18 @@ Qaterial.Dialog {
             DexLabel {
                 anchors.verticalCenter: parent.verticalCenter
                 text: "Settings"
-                font: theme.textType.head6
+                font: DexTypo.head6
             }
             DexLabel {
                 anchors.verticalCenter: parent.verticalCenter
                 text: " - "+qsTr(menu_list.model[menu_list.currentIndex])
                 opacity: .5
-                font: theme.textType.head6
+                font: DexTypo.head6
             }
         }
         Rectangle {
             anchors.bottom: parent.bottom
-            color: theme.foregroundColor
+            color: DexTheme.foregroundColor
             opacity: .10
             width: parent.width
             height: 1.5
@@ -133,7 +134,7 @@ Qaterial.Dialog {
                             anchors.fill: parent
                             height: 45
                             radius: 5
-                            color: theme.hightlightColor
+                            color: DexTheme.hightlightColor
                         }
                     }
 
@@ -147,7 +148,7 @@ Qaterial.Dialog {
             Rectangle {
                 Layout.fillHeight: true
                 width: 2
-                color: theme.foregroundColor
+                color: DexTheme.foregroundColor
                 opacity: .10
             }
             Item {
@@ -287,7 +288,7 @@ Qaterial.Dialog {
                                     Layout.alignment: Qt.AlignVCenter
                                     model: ["Ubuntu", "Montserrat", "Roboto"]
                                     Component.onCompleted: {
-                                        let current = _font.fontFamily
+                                        let current = DexTypo.fontFamily
                                         currentIndex = dexFont.model.indexOf(current)
                                     }
                                 }
@@ -328,7 +329,7 @@ Qaterial.Dialog {
                                         atomic_settings2.setValue("CurrentTheme", dexTheme.currentText)
                                         atomic_settings2.sync()
                                         app.load_theme(dexTheme.currentText.replace(".json",""))
-                                        _font.fontFamily = dexFont.currentText
+                                        DexTypo.fontFamily = dexFont.currentText
                                         
                                     }
                                 }
@@ -522,7 +523,7 @@ Qaterial.Dialog {
                 DexLabel {
                     text: qsTr("Search Update")
                     anchors.verticalCenter: parent.verticalCenter
-                    font: theme.textType.button
+                    font: DexTypo.button
                 }
                 opacity: .6
             }
@@ -550,7 +551,7 @@ Qaterial.Dialog {
                 DexLabel {
                     text: qsTr("Logout")
                     anchors.verticalCenter: parent.verticalCenter
-                    font: theme.textType.button
+                    font: DexTypo.button
                 }
                 opacity: .6
             }
@@ -563,7 +564,7 @@ Qaterial.Dialog {
 
         Rectangle {
             anchors.top: parent.top
-            color: theme.foregroundColor
+            color: DexTheme.foregroundColor
             opacity: .10
             width: parent.width
             height: 1.5

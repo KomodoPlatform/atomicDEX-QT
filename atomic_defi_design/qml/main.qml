@@ -38,7 +38,7 @@ DexWindow
     {
 		anchors.fill: parent
 		color: "transparent"
-		border.color: app.globalTheme.dexBoxBackgroundColor
+		border.color: DexTheme.dexBoxBackgroundColor
 		border.width: 1
 		radius: 0
 	}
@@ -60,7 +60,7 @@ DexWindow
 		width: parent.width-2
 		height: 30
 		anchors.horizontalCenter: parent.horizontalCenter
-		color: app.globalTheme.surfaceColor
+		color:  DexTheme.surfaceColor
 		visible: isOsx 
 	}
 
@@ -76,7 +76,7 @@ DexWindow
 
 		spacing: 8 
 		padding: 2
-		backgroundColor: app.globalTheme.dexBoxBackgroundColor
+		backgroundColor:  DexTheme.dexBoxBackgroundColor
 
 		contentItem: Item
 		{
@@ -86,7 +86,7 @@ DexWindow
 				width: parent.width-10
 				height: parent.height-5
 				anchors.centerIn: parent
-				color: logout_area.containsMouse? app.globalTheme.surfaceColor : app.globalTheme.dexBoxBackgroundColor
+				color: logout_area.containsMouse?  DexTheme.surfaceColor :  DexTheme.dexBoxBackgroundColor
 				Row {
 					anchors.centerIn: parent
 					Qaterial.ColorIcon {
@@ -97,7 +97,7 @@ DexWindow
 					spacing: 5
 					DexLabel {
 						anchors.verticalCenter: parent.verticalCenter
-						color: app.globalTheme.foregroundColor
+						color:  DexTheme.foregroundColor
 						text: qsTr('Logout')
 					}
 				}
@@ -158,7 +158,7 @@ DexWindow
 			font.weight: Font.Medium
 			opacity: .5
 			leftPadding: 5
-			color: app.globalTheme.foregroundColor
+			color:  DexTheme.foregroundColor
 			visible: !_label.visible
 			anchors.verticalCenter: parent.verticalCenter
 		} 
@@ -186,7 +186,7 @@ DexWindow
 				font.family: 'Montserrat'
 				font.weight: Font.Medium
 				visible: _label.visible & !isOsx
-				color: app.globalTheme.foregroundColor
+				color:  DexTheme.foregroundColor
 				anchors.verticalCenter: parent.verticalCenter
 				leftPadding: 2
 			}
@@ -196,7 +196,7 @@ DexWindow
 				anchors.verticalCenter: parent.verticalCenter
 				//visible: _label.visible
 				radius: 3
-				color: _area.containsMouse? app.globalTheme.dexBoxBackgroundColor : "transparent"
+				color: _area.containsMouse?  DexTheme.dexBoxBackgroundColor : "transparent"
 				Row {
 					id: __row
 					anchors.centerIn: parent
@@ -206,7 +206,7 @@ DexWindow
 						source: Qaterial.Icons.accountCircle
 						iconSize: 18
 						visible: _label.visible
-						color: app.globalTheme.foregroundColor
+						color:  DexTheme.foregroundColor
 						anchors.verticalCenter: parent.verticalCenter
 					}
 					DexLabel {
@@ -216,14 +216,14 @@ DexWindow
 						font.weight: Font.Medium
 						opacity: .7
 						visible: window.logged
-						color: app.globalTheme.foregroundColor
+						color:  DexTheme.foregroundColor
 						anchors.verticalCenter: parent.verticalCenter
 					}
 					Qaterial.ColorIcon {
 						source: Qaterial.Icons.menuDown
 						iconSize: 14
 						visible: _label.visible
-						color: app.globalTheme.foregroundColor
+						color:  DexTheme.foregroundColor
 						anchors.verticalCenter: parent.verticalCenter
 					}
 				}
@@ -245,7 +245,7 @@ DexWindow
 				font.family: 'Montserrat'
 				font.weight: Font.Medium
 				visible: _label.visible
-				color: app.globalTheme.foregroundColor
+				color:  DexTheme.foregroundColor
 				anchors.verticalCenter: parent.verticalCenter
 				leftPadding: 2
 			}
@@ -260,7 +260,7 @@ DexWindow
 					font.weight: Font.Medium
 					opacity: .7
 					visible: _label.visible
-					color: app.globalTheme.foregroundColor
+					color:  DexTheme.foregroundColor
 					anchors.verticalCenter: parent.verticalCenter
 				}
 				DexLabel {
@@ -269,7 +269,7 @@ DexWindow
 					font.family: 'Montserrat'
 					font.weight: Font.Medium
 					visible: _label.visible
-					color: app.globalTheme.foregroundColor
+					color:  DexTheme.foregroundColor
 					anchors.verticalCenter: parent.verticalCenter
 				}
 				DexLabel {
@@ -277,7 +277,7 @@ DexWindow
 					font.family: 'lato'
 					font.weight: Font.Medium
 					visible: _label.visible
-					color: window.application.globalTheme.accentColor
+					color: DexTheme.accentColor
 					privacy: true
 					anchors.verticalCenter: parent.verticalCenter
 					DexMouseArea {
@@ -301,14 +301,14 @@ DexWindow
 				font.family: 'Montserrat'
 				font.weight: Font.Medium
 				visible: _label.visible
-				color: app.globalTheme.foregroundColor
+				color:  DexTheme.foregroundColor
 				anchors.verticalCenter: parent.verticalCenter
 				leftPadding: 2
 			}
 			DexIconButton {
 				opacity: containsMouse? 1 : .8
 				anchors.verticalCenter: parent.verticalCenter
-				color: active? app.globalTheme.accentColor : containsMouse? app.globalTheme.accentColor : app.globalTheme.foregroundColor 
+				color: active?  DexTheme.accentColor : containsMouse?  DexTheme.accentColor :  DexTheme.foregroundColor 
 				iconSize: 22
 				icon: Qaterial.Icons.bellOutline
 				visible: _label.visible
@@ -321,8 +321,8 @@ DexWindow
 					radius: width/2
 					width: count_text.height * 1.4
 					height: width
-					visible: app.notifications_list.length > 0
-					color: app.globalTheme.redColor
+					visible: app.notifications_list !== undefined? app.notifications_list.length > 0 : false
+					color:  DexTheme.redColor
 
 					DefaultText {
 						id: count_text
@@ -330,7 +330,7 @@ DexWindow
 						text_value: _label.visible ? app.notifications_list.length ?? 0 : 0
 						font.pixelSize: 8
 						font.family: 'Lato'
-						color: app.globalTheme.foregroundColor 
+						color:  DexTheme.foregroundColor 
 					}
 				}
 				onClicked: {

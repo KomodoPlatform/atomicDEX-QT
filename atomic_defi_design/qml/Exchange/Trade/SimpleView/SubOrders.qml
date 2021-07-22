@@ -8,9 +8,11 @@ import Qaterial 1.0 as Qaterial
 
 //! Project Imports
 import "../../../Components"
-import "../../../Constants"   //> Style
+import "../../../Constants" as Constants  //> Style
 import "../Orders" as Orders
 import "Main.js" as Main
+
+import App 1.0
 
 Item
 {
@@ -18,7 +20,7 @@ Item
 
     readonly property date default_min_date: new Date("2019-01-01")
     readonly property date default_max_date: new Date(new Date().setDate(new Date().getDate() + 30))
-    property var list_model_proxy: API.app.orders_mdl.orders_proxy_mdl
+    property var list_model_proxy: Constants.API.app.orders_mdl.orders_proxy_mdl
     property bool displayFilter: false
 
     anchors.fill: parent
@@ -70,14 +72,14 @@ Item
             DefaultText // Title
             {
                 text: qsTr("Orders")
-                font.pixelSize: Style.textSize1
+                font.pixelSize: Constants.Style.textSize1
             }
 
             DexLabel // Description
             {
                 width: _subOrdersRoot.width - 40
                 anchors.topMargin: 12
-                font.pixelSize: Style.textSizeSmall4
+                font.pixelSize: Constants.Style.textSizeSmall4
                 //text: _filterApplied? "" : qsTr("Finished orders")
                 DexLabel {
                     opacity: .4
@@ -121,14 +123,14 @@ Item
             Layout.fillHeight: true
             Layout.fillWidth: true
             property bool is_history: false
-            property var list_model_proxy: API.app.orders_mdl.orders_proxy_mdl
+            property var list_model_proxy: Constants.API.app.orders_mdl.orders_proxy_mdl
             Component.onCompleted: {
                 list_model_proxy.is_history = false
             }
             List { id: order_list_view }
             DexRectangle {
                 anchors.fill: parent 
-                color: theme.dexBoxBackgroundColor
+                color: DexTheme.dexBoxBackgroundColor
                 opacity: .8
                 visible: _subOrdersRoot.displayFilter
                 border.width: 0
@@ -138,7 +140,7 @@ Item
                 height: _subOrdersRoot.displayFilter? 330 : 60
                 visible: height>100
                 sizeAnimation: true
-                color: theme.dexBoxBackgroundColor
+                color: DexTheme.dexBoxBackgroundColor
                 radius: 0
                 y: -20
                 Column {
@@ -150,7 +152,7 @@ Item
                         text: qsTr("Filter settings")
                         topPadding: 10
                         leftPadding: 10
-                        font: _font.body1
+                        font: DexTypo.body1
                     }
                     RowLayout {
                         width: main_order.width - 30
@@ -160,14 +162,14 @@ Item
                         DexLabel {
                             text: qsTr("Base Ticker")
                             leftPadding: 10
-                            font: _font.body2
+                            font: DexTypo.body2
                             Layout.fillWidth: true
                             Layout.alignment: Qt.AlignVCenter
                             opacity: .6
                         }
                         DefaultSweetComboBox {
                             id: combo_base
-                            model: API.app.portfolio_pg.global_cfg_mdl.all_proxy
+                            model: Constants.API.app.portfolio_pg.global_cfg_mdl.all_proxy
                             onCurrentTickerChanged: applyTickerFilter()
                             height: 60
                             valueRole: "ticker"
@@ -183,14 +185,14 @@ Item
                         DexLabel {
                             text: qsTr("Rel Ticker")
                             leftPadding: 10
-                            font: _font.body2
+                            font: DexTypo.body2
                             Layout.fillWidth: true
                             Layout.alignment: Qt.AlignVCenter
                             opacity: .6
                         }
                         DefaultSweetComboBox {
                             id: combo_rel
-                            model: API.app.portfolio_pg.global_cfg_mdl.all_proxy//combo_base.model
+                            model: Constants.API.app.portfolio_pg.global_cfg_mdl.all_proxy//combo_base.model
                             onCurrentTickerChanged: applyTickerFilter()
                             height: 60
                             valueRole: "ticker"

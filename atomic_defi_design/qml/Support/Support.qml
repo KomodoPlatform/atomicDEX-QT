@@ -6,6 +6,8 @@ import QtGraphicalEffects 1.0
 import "../Components"
 import "../Constants"
 
+import App 1.0
+
 Item {
     id: root
 

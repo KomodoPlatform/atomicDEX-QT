@@ -4,6 +4,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.12
 import "../Exchange/Trade/"
 import "../Constants/" as Constants
+import App 1.0
 
 Rectangle {
     id: _control
@@ -68,7 +69,7 @@ Rectangle {
     }
 
     //shadowOff: true
-    color: theme.dexBoxBackgroundColor
+    color: DexTheme.dexBoxBackgroundColor
     property alias titleLabel: _texto
 
     function setFalseHeight() {
@@ -171,7 +172,7 @@ Rectangle {
                     Layout.fillWidth: true
                     font.weight: Font.Medium
                     text: _control.title
-                    color: theme.accentColor
+                    color: DexTheme.accentColor
                     visible: isVertical || !hidden
                     bottomPadding: 5
                 }
@@ -185,7 +186,7 @@ Rectangle {
                         icon.height: 17
                         icon.width: 17
                         visible: _control.canBeFull
-                        foregroundColor: theme.accentColor
+                        foregroundColor: DexTheme.accentColor
                         icon.source: _control.fullScreen? Qaterial.Icons.fullscreenExit : Qaterial.Icons.fullscreen
                         onClicked: _control.fullScreen =!_control.fullScreen
                     }
@@ -203,7 +204,7 @@ Rectangle {
                         implicitWidth: 40
                         icon.height: 17
                         icon.width: 17
-                        foregroundColor: theme.accentColor
+                        foregroundColor: DexTheme.accentColor
                         visible: _control.reloadable
                         icon.source: Qaterial.Icons.refresh
                         onClicked: {
@@ -218,7 +219,7 @@ Rectangle {
                         implicitWidth: 40
                         icon.height: 17
                         icon.width: 17
-                        foregroundColor: theme.accentColor
+                        foregroundColor: DexTheme.accentColor
                         icon.source: !_control.hidden? Qaterial.Icons.eyeOutline : Qaterial.Icons.eyeOffOutline
                         onClicked: _control.hidden =!_control.hidden
                     }
@@ -227,7 +228,7 @@ Rectangle {
                         implicitWidth: 40
                         icon.height: 17
                         icon.width: 17
-                        foregroundColor: theme.accentColor
+                        foregroundColor: DexTheme.accentColor
                         visible: _control.expandable && _control.parent.parent.orientation === Qt.Vertical
                         icon.source: _control.expandedVert? Qaterial.Icons.unfoldLessHorizontal : Qaterial.Icons.unfoldMoreHorizontal
                         onClicked: _control.expandedVert =!_control.expandedVert
@@ -237,7 +238,7 @@ Rectangle {
                         implicitWidth: 40
                         icon.height: 17
                         icon.width: 17
-                        foregroundColor: theme.accentColor
+                        foregroundColor: DexTheme.accentColor
                         visible: _control.duplicable
                         icon.source: Qaterial.Icons.plus
                     }
@@ -246,7 +247,7 @@ Rectangle {
                         implicitWidth: 40
                         icon.height: 17
                         icon.width: 17
-                        foregroundColor: theme.accentColor
+                        foregroundColor: DexTheme.accentColor
                         visible: _control.closable
                         icon.source: Qaterial.Icons.close
                         onClicked: {
@@ -268,7 +269,7 @@ Rectangle {
                 Layout.alignment: Qt.AlignVCenter
                 Layout.fillWidth: true
                 text: _control.title
-                color: theme.accentColor
+                color: DexTheme.accentColor
                 bottomPadding: 5
                 rotation: 90
                 anchors.centerIn: parent
@@ -286,7 +287,7 @@ Rectangle {
                         implicitWidth: 40
                         icon.height: 17
                         icon.width: 17
-                        foregroundColor: theme.accentColor
+                        foregroundColor: DexTheme.accentColor
                         icon.source: _control.expandable? Qaterial.Icons.eyeOutline : Qaterial.Icons.eyeOffOutline
                         onClicked: {
                             _control.hidden = !_control.hidden
@@ -297,7 +298,7 @@ Rectangle {
                         implicitWidth: 40
                         icon.height: 17
                         icon.width: 17
-                        foregroundColor: theme.accentColor
+                        foregroundColor: DexTheme.accentColor
                         visible: _control.expandable && _control.parent.parent.orientation === Qt.Horizontal 
                         icon.source: _control.expandedHort? Qaterial.Icons.unfoldLessVertical : Qaterial.Icons.unfoldMoreVertical
                         onClicked: _control.expandedHort =!_control.expandedHort
@@ -307,7 +308,7 @@ Rectangle {
                         implicitWidth: 40
                         icon.height: 17
                         icon.width: 17
-                        foregroundColor: theme.accentColor
+                        foregroundColor: DexTheme.accentColor
                         visible: _control.duplicable
                         icon.source: Qaterial.Icons.plus
                     }
@@ -316,7 +317,7 @@ Rectangle {
                         implicitWidth: 40
                         icon.height: 17
                         icon.width: 17
-                        foregroundColor: theme.accentColor
+                        foregroundColor: DexTheme.accentColor
                         visible: _control.closable
                         icon.source: Qaterial.Icons.close
 
