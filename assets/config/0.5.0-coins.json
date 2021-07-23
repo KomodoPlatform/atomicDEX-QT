@@ -619,7 +619,7 @@
     "currently_enabled": false
   },
   "BCH": {
-    "active": false,
+    "active": true,
     "coin": "BCH",
     "coingecko_id": "bitcoin-cash",
     "coinpaprika_id": "bch-bitcoin-cash",
@@ -2167,7 +2167,7 @@
     "currently_enabled": false
   },
   "ETH": {
-    "active": false,
+    "active": true,
     "coin": "ETH",
     "coingecko_id": "ethereum",
     "coinpaprika_id": "eth-ethereum",
@@ -2265,38 +2265,38 @@
     "currently_enabled": false
   },
   "USDC-BEP20": {
-    "coin": "USDC-BEP20",
-    "name": "USD Coin",
-    "coinpaprika_id": "usdc-usd-coin",
-    "coingecko_id": "usd-coin",
-    "nodes": [
-      "http://bsc1.cipig.net:8655",
-      "http://bsc2.cipig.net:8655",
-      "http://bsc3.cipig.net:8655"
-    ],
-    "explorer_url": [
-      "https://bscscan.com/"
-    ],
-    "type": "BEP-20",
-    "active": false,
-    "currently_enabled": false
+      "coin": "USDC-BEP20",
+      "name": "USD Coin",
+      "coinpaprika_id": "usdc-usd-coin",
+      "coingecko_id": "usd-coin",
+      "nodes": [
+        "http://bsc1.cipig.net:8655",
+        "http://bsc2.cipig.net:8655",
+        "http://bsc3.cipig.net:8655"
+      ],
+      "explorer_url": [
+        "https://bscscan.com/"
+      ],
+      "type": "BEP-20",
+      "active": true,
+      "currently_enabled": false
   },
   "USDC-ERC20": {
-    "coin": "USDC-ERC20",
-    "name": "USD Coin",
-    "coinpaprika_id": "usdc-usd-coin",
-    "coingecko_id": "usd-coin",
-    "nodes": [
-      "http://eth1.cipig.net:8555",
-      "http://eth2.cipig.net:8555",
-      "http://eth3.cipig.net:8555"
-    ],
-    "explorer_url": [
-      "https://etherscan.io/"
-    ],
-    "type": "ERC-20",
-    "active": false,
-    "currently_enabled": false
+      "coin": "USDC-ERC20",
+      "name": "USD Coin",
+      "coinpaprika_id": "usdc-usd-coin",
+      "coingecko_id": "usd-coin",
+      "nodes": [
+        "http://eth1.cipig.net:8555",
+        "http://eth2.cipig.net:8555",
+        "http://eth3.cipig.net:8555"
+      ],
+      "explorer_url": [
+        "https://etherscan.io/"
+      ],
+      "type": "ERC-20",
+      "active": true,
+      "currently_enabled": false
   },
   "USDT-BEP20": {
     "coin": "USDT-BEP20",
@@ -2716,21 +2716,21 @@
     "wallet_only": true
   },
   "SMTF": {
-    "coin": "SMTF",
-    "name": "SmartFi",
-    "coinpaprika_id": "test-coin",
-    "coingecko_id": "test-coin",
-    "nodes": [
-      "http://bsc1.cipig.net:8655",
-      "http://bsc2.cipig.net:8655",
-      "http://bsc3.cipig.net:8655"
-    ],
-    "explorer_url": [
-      "https://bscscan.com/"
-    ],
-    "type": "BEP-20",
-    "active": false,
-    "currently_enabled": false
+      "coin": "SMTF",
+      "name": "SmartFi",
+      "coinpaprika_id": "test-coin",
+      "coingecko_id": "test-coin",
+      "nodes": [
+        "http://bsc1.cipig.net:8655",
+        "http://bsc2.cipig.net:8655",
+        "http://bsc3.cipig.net:8655"
+      ],
+      "explorer_url": [
+        "https://bscscan.com/"
+      ],
+      "type": "BEP-20",
+      "active": true,
+      "currently_enabled": false
   },
   "SOULJA": {
     "coin": "SOULJA",
@@ -4141,7 +4141,7 @@
       "https://explorer.sfusd.kmd.sh/"
     ],
     "type": "UTXO",
-    "active": false,
+    "active": true,
     "currently_enabled": false
   },
   "AGI": {
