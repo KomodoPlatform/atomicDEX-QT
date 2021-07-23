@@ -25,15 +25,6 @@ Item {
 
     property bool is_history: false
 
-    property string recover_funds_result: '{}'
-
-    function onRecoverFunds(order_id) {
-        const result = API.app.recover_fund(order_id)
-        console.log("Refund result: ", result)
-        recover_funds_result = result
-        recover_funds_modal.open()
-    }
-
     function applyDateFilter() {
         list_model_proxy.filter_minimum_date = min_date.date
 
@@ -97,15 +88,28 @@ Item {
             Row {
                 x: 5
                 y: 0
-                spacing: 0
+                spacing: 5
                 Qaterial.OutlineButton {
                     icon.source: Qaterial.Icons.filter
-                    text: "Filter"
+                    text: qsTr("Filter")
                     foregroundColor:Style.colorWhite5
                     anchors.verticalCenter: parent.verticalCenter
                     outlinedColor: Style.colorTheme5
                     onClicked: orders_settings.displaySetting = !orders_settings.displaySetting
                 }
+
+                DexLabel {
+                    opacity: .4
+                    visible: !orders_settings.displaySetting
+                    anchors.verticalCenter: parent.verticalCenter
+                    text: qsTr("Filter") + ": %1 / %2 <br> %3: %4 - %5"
+                                                    .arg(combo_base.currentTicker)
+                                                    .arg(combo_rel.currentTicker)
+                                                    .arg(qsTr("Date"))
+                                                    .arg(min_date.date.toLocaleDateString(Locale.ShortFormat, "yyyy-MM-dd"))
+                                                    .arg(max_date.date.toLocaleDateString(Locale.ShortFormat, "yyyy-MM-dd"))
+                }
+
                 Qaterial.OutlineButton {
                     visible: root.is_history && orders_settings.displaySetting
                     foregroundColor:Style.colorWhite5
@@ -118,14 +122,14 @@ Item {
                         export_csv_dialog.open()
                     }
                 }
-
             }
+
             Row {
                 anchors.right: parent.right
                 y: 0
                 rightPadding: 5
                 Qaterial.OutlineButton {
-                    visible: root.is_history
+                    visible: root.is_history & orders_settings.displaySetting
                     Layout.leftMargin: 30
                     text: qsTr("Apply Filter")
                     foregroundColor: enabled? Style.colorGreen2 : Style.colorTheme5
@@ -155,7 +159,7 @@ Item {
                     id: combo_base
                     model: API.app.portfolio_pg.global_cfg_mdl.all_proxy
                     onCurrentTickerChanged: applyFilter()
-                    width: 150
+                    Layout.fillWidth: true
                     height: 100
                     valueRole: "ticker"
                     textRole: 'ticker'
@@ -179,25 +183,20 @@ Item {
                     id: combo_rel
                     model: API.app.portfolio_pg.global_cfg_mdl.all_proxy//combo_base.model
                     onCurrentTickerChanged: applyFilter()
-                    width: 150
+                    Layout.fillWidth: true
                     height: 100
                     valueRole: "ticker"
                     textRole: 'ticker'
-
                 }
-                Item {
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                }
-
                 Qaterial.TextFieldDatePicker {
                     id: min_date
                     title: qsTr("From")
                     from: default_min_date
                     to: default_max_date
                     date: default_min_date
+                    font.pixelSize: 13
                     onAccepted: applyDateFilter()
-                    Layout.preferredWidth: 130
+                    Layout.fillWidth: true
                 }
 
                 Qaterial.TextFieldDatePicker {
@@ -207,8 +206,9 @@ Item {
                     from: min_date.date
                     to: default_max_date
                     date: default_max_date
+                    font.pixelSize: 13
                     onAccepted: applyDateFilter()
-                    Layout.preferredWidth: 130
+                    Layout.fillWidth: true
                 }
             }
         }
@@ -238,14 +238,14 @@ Item {
         id: export_csv_dialog
 
         title: qsTr("Please choose the CSV export name and location")
-        fileMode: FileDialog.OpenFile
+        fileMode: FileDialog.SaveFile
 
         defaultSuffix: "csv"
         nameFilters: [ "CSV files (*.csv)", "All files (*)" ]
 
         onAccepted: {
-            const path = fileUrl.toString()
-
+            const path = currentFile.toString()
+            
             // Export
             console.log("Exporting to CSV: " + path)
             API.app.exporter_service.export_swaps_history_to_csv(path.replace(General.os_file_prefix, ""))
@@ -256,15 +256,6 @@ Item {
         }
         onRejected: {
             console.log("CSV export cancelled")
-        }
-    }
-    ModalLoader {
-        id: recover_funds_modal
-        sourceComponent: LogModal {
-            header: qsTr("Recover Funds Result")
-            field.text: General.prettifyJSON(recover_funds_result)
-
-            onClosed: recover_funds_result = "{}"
         }
     }
 }

@@ -137,11 +137,12 @@ Item {
                         id: willyBG
                         Layout.fillHeight: true
                         Layout.fillWidth: true
+                        visible: false
                     }
 
                     AssetPieChart {
                         id: pie
-                        Layout.preferredWidth: portfolio.isUltraLarge ? 350 : 250
+                        Layout.fillWidth: true
                         Layout.preferredHeight: portfolio.isUltraLarge ? 600 : 350
                         Layout.alignment: Qt.AlignTop
                     }
@@ -166,6 +167,18 @@ Item {
                                 text: qsTr("Show only coins with balance")
                                 checked: portfolio_coins.with_balance
                                 onCheckedChanged: portfolio_coins.with_balance = checked
+
+                                DexLabel
+                                {
+                                    anchors.left: parent.right
+                                    anchors.leftMargin: 5
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    anchors.verticalCenterOffset: 1
+
+                                    font.pixelSize: 12
+
+                                    text: qsTr("(%1/%2)").arg(coinsList.innerList.count).arg(portfolio_mdl.length)
+                                }
                             }
                         }
                         DexTextField {
@@ -193,7 +206,12 @@ Item {
                     }
                 }
             }
-            TableDex {}
+
+            TableDex
+            {
+                id: coinsList
+            }
+
             Item {
                 width: 1
                 height: 10
